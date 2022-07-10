@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was done as an assigment interview. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with React+Typescript.
 
 ## Available Scripts
 
