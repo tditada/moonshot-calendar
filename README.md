@@ -1,46 +1,33 @@
-# Getting Started 
+# To Do List With Unsolicited Advice
 
-This project was done as an assigment interview. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with React+Typescript.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to start:
 
-In the project directory, you can run:
+- Run `yarn` or `npm install` to install dependencies
+- Run `yarn start` or `npm start` to start the app in development mode. It will automatically open.
+```
+http://localhost:3000
+```
 
-### `yarn start`
+## How to build the app:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run `yarn build` or `npm run build`. It bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### About the app
+The main constrain was time (3 hours). My main goal was getting an MVP with clean code, some tests and clear documentation that works. So I choose to use technologies I'm comfortable with and that are less time consuming.
 
-### `yarn test`
+### How I started with the assignment
+1) I first read the assignment completely to check if I understand it and if I have questions (best to ask them at this stage). 
+2) As I'm working with an API, I tested it to see if it does what I expect and what endpoints and filters are available. 
+3) I choose what my goal will be and I decided that I want to first have a list of all the launches with error and loading. Then I could add at least one filter to the list. I reasearch a few minutes about react-simple-maps and google-map-react but as it's my first time using maps I don't want to lose time with that.
+4) Before coding, I also think a little about the components I'm building and what I want them to do. I put a HTML base with header, footer, main etc
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Decisions about setup, library and techniques
+1) This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with `React` and `Typescript`. I choose it because it's a well known library with good documentation I feel confortable with.  There are other newer options like `Vite` that could have also work.
+2) `Styled components` as the  styling framework
+3) `Jest` and `React testing library` for testing.
+4) `Hooks` for state management
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What I would have change if I have more time, why and how.
+1) Testing: I started with testing and documentation a bit late for my taste.
