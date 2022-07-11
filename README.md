@@ -34,4 +34,7 @@ I have `src`, and at src root there's the main App and index. But then, the comp
 5) `Hooks` for state management as it's a small app and it can be managed just with hooks. Other option if it was a bit bigger and complex would have been redux (that also has thunks and sagas).
 
 ### What I would have change if I have more time, why and how.
-1) Testing: I started with testing and documentation a bit late for my taste.
+1) Testing: I started with testing a bit late for my taste. There's also only unit tests, no integration with the api.
+2) We could have dynamically get the types from the API or search for something better than writting them manualy. In this case if some part of the API change parameters we would probably get a client facing error.
+3) Adding the map would have been much nicer to look up for the user (but I don't feel it was basic functionality with the time constrain). I searched a bit about react-simple-maps and google-map-react as options as I mentioned above.
+4) Pagination in the list. Right now there's a magic number because I couldn't get the time to finish it. I left the offset variable and the setOffset I wantet to use there because that's the way I would go. The list could have a next, prev and a page item number select by the user.

@@ -76,16 +76,16 @@ const Launches = () => {
 
     return (
         <div>
-            {error ? <Alert severity="error">{ERROR_MESSAGE}: {error} </Alert> : ''}
+            {error ? <Alert data-testid="alert" severity="error">{ERROR_MESSAGE}: {error} </Alert> : ''}
             <React.Fragment>
                 <StyledTitle>{UPCOMING_TEXT}</StyledTitle>
                 <StatusForm statusList={STATUS_LIST} handleSelect={handleStatusSelect} />
             </React.Fragment>
-            <React.Fragment>
-                {loading ? <StyledCircularProgress /> : launchesList.map((launch) => {
+            <div data-testid="launches-list">
+                {loading ? <StyledCircularProgress data-testid="circular-progress" /> : launchesList.map((launch) => {
                    return <LaunchItem launch={launch} />
                 })}
-            </React.Fragment>
+            </div>
         </div>
     );
 };
