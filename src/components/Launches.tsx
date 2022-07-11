@@ -4,6 +4,7 @@ import axios from 'axios';
 import moment from 'moment';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import LaunchItem from './LaunchItem';
 import StatusForm from './StatusForm';
 import { Launch, LaunchesGetParams } from './types';
 
@@ -11,23 +12,7 @@ const LAUNCHES_API = 'https://lldev.thespacedevs.com/2.2.0/launch/';
 const LIMIT_API = 500; //TODO: Set pagination
 
 const UPCOMING_TEXT = 'Upcoming launches next 3 months';
-const NAME = 'Name';
-const LAUNCH = 'Launch';
-const MAP_IMAGE = 'Map Image';
-const COUNTRY = "Country Code";
-const STATUS = 'Status';
 const ERROR_MESSAGE = "Error getting launches"; // Outside dev enviroment we shouldn't show the full error we get from the API (security reasons)
-
-const StyledLaunchItem = styled.div`
-  margin: 0.5em;
-  padding: 1em;
-  border: solid 1px black;
-`;
-
-const StyledMap = styled.img`
-    width: 400px;
-    height: auto;
-`;
 
 const StyledCircularProgress = styled(CircularProgress)`
     padding: 1em;
@@ -98,16 +83,7 @@ const Launches = () => {
             </React.Fragment>
             <React.Fragment>
                 {loading ? <StyledCircularProgress /> : launchesList.map((launch) => {
-                    return <StyledLaunchItem key={launch.id}>
-                        <div>{NAME}: {launch.name} </div>
-                        <div>{LAUNCH}: {launch.net}</div>
-                        <div>{COUNTRY}: {launch.pad.location.country_code} </div>
-                        <div>{STATUS} : {launch.status.abbrev}</div>
-                        <div>
-                            <div>{MAP_IMAGE}:</div>
-                            <StyledMap src={launch.pad.map_image} />
-                        </div>
-                    </StyledLaunchItem>
+                   return <LaunchItem launch={launch} />
                 })}
             </React.Fragment>
         </div>
