@@ -8,11 +8,18 @@ const LAUNCHES_API = 'https://lldev.thespacedevs.com/2.2.0/launch/';
 const LIMIT_API = 500; //TODO: Set pagination
 
 const UPCOMING_TEXT = 'Upcoming launches next 3 months';
-const NAME = 'Name:';
-const LAUNCH = 'Launch:';
+const NAME = 'Name';
+const LAUNCH = 'Launch';
+const MAP_IMAGE = 'Map Image';
+const COUNTRY = "Country Code";
 
 const StyledLaunchItem = styled.div`
   margin: 0.5em;
+`;
+
+const StyledMap = styled.img`
+    width: 400px;
+    height: auto;
 `;
 
 const Launches = () => {
@@ -27,13 +34,13 @@ const Launches = () => {
     const getData = async () => {
         try {
             const response = await axios.get(
-                LAUNCHES_API, 
-                { 
-                    params: { 
-                        limit: LIMIT_API, 
-                        net__gt: now, 
-                        net__lt: three_months 
-                    } 
+                LAUNCHES_API,
+                {
+                    params: {
+                        limit: LIMIT_API,
+                        net__gt: now,
+                        net__lt: three_months
+                    }
                 }
             );
             setLaunchesList(response.data.results);
@@ -56,8 +63,12 @@ const Launches = () => {
             <div>{UPCOMING_TEXT}</div>
             {launchesList.map((launch) => {
                 return <StyledLaunchItem key={launch.id}>
-                    <div>{NAME} {launch.name} </div>
-                    <div>{LAUNCH} {launch.net}</div>
+                    <div>{NAME}: {launch.name} </div>
+                    <div>{LAUNCH}: {launch.net}</div>
+                    <div>{COUNTRY}: {launch.pad.location.country_code} </div>
+                    <div>{MAP_IMAGE}:
+                        <StyledMap src={launch.pad.map_image} />
+                    </div>
                 </StyledLaunchItem>
             })}
         </div>
