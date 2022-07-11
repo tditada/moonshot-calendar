@@ -31,10 +31,13 @@ I have `src`, and at src root there's the main App and index. But then, the comp
 2) `Styled components` as the  styling framework
 3) `Jest` and `React testing library` for testing.
 4) `NaterialUI`. I needed something quick for error and loading managment, and also select. Its a good UI library with clear documentation.
-5) `Hooks` for state management as it's a small app and it can be managed just with hooks. Other option if it was a bit bigger and complex would have been redux (that also has thunks and sagas).
+5) `Hooks` for state management as it's a small app and it can be managed just with hooks. Other option if it was a bit bigger and complex would have been redux (that also has thunks and sagas). I also only use `useState` and `useEffect` but for a more complex state there's `useReducer` also.
+6) 
 
 ### What I would have change if I have more time, why and how.
-1) Testing: I started with testing a bit late for my taste. There's also only unit tests, no integration with the api.
-2) We could have dynamically get the types from the API or search for something better than writting them manualy. In this case if some part of the API change parameters we would probably get a client facing error.
-3) Adding the map would have been much nicer to look up for the user (but I don't feel it was basic functionality with the time constrain). I searched a bit about react-simple-maps and google-map-react as options as I mentioned above.
-4) Pagination in the list. Right now there's a magic number because I couldn't get the time to finish it. I left the offset variable and the setOffset I wantet to use there because that's the way I would go. The list could have a next, prev and a page item number select by the user.
+1) Testing: I thing this one is the main thing. I do belive tests are imporntat but I started with it too late for my taste. So I selected the component with more functionality (Launches) and I mocked axios there and left a test working and some other tests I would have wanted to do commented. There's also only unit tests, no integration with the api.
+2) We could have dynamically get the types from the API or search for something better than writting them manualy. In this case if some part of the API changes parameters we would probably get a client facing error.
+3) Pagination in the list. Right now there's a magic number because I couldn't get the time to finish it. I left the offset variable and the setOffset I wantet to use there because that's the way I would go. The list could have a next, prev and a page item number select by the user.
+4) Adding the map would have been much nicer to look up for the user (but I don't feel it was basic functionality with the time constrain). I searched a bit about react-simple-maps and google-map-react as options as I mentioned above.
+5) I would have like a bit more time to review my component architecture: righ now theres Launches, LaunchItem and StatusForm. Each component has its styles and constants, but they share the types from the `types.ts` file. I'm not sure all the types that are there are really types to share between components so some private typs could have gone in the same component file as we have now with constants and styles (or in a component folder if that gets too big)
+6) The Status Filter. It would have been much better to read the statuses from the list filtering them dynamically so the user only sees the ones that are available. The "all" as 0 is not something I like also, could be better.
