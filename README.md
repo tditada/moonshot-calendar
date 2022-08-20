@@ -32,7 +32,6 @@ I have `src`, and at src root there's the main App and index. But then, the comp
 3) `Jest` and `React testing library` for testing.
 4) `NaterialUI`. I needed something quick for error and loading managment, and also select. Its a good UI library with clear documentation.
 5) `Hooks` for state management as it's a small app and it can be managed just with hooks. Other option if it was a bit bigger and complex would have been redux (that also has thunks and sagas). I also only use `useState` and `useEffect` but for a more complex state there's `useReducer` also.
-6) 
 
 ### What I would have change if I have more time, why and how.
 1) Testing: I thing this one is the main thing. I do belive tests are imporntat but I started with it too late for my taste. So I selected the component with more functionality (Launches) and I mocked axios there and left a test working and some other tests I would have wanted to do commented. There's also only unit tests, no integration with the api.

@@ -12,7 +12,7 @@ const LAUNCHES_API = 'https://lldev.thespacedevs.com/2.2.0/launch/';
 const LIMIT_API = 500; //TODO: Set pagination
 
 const UPCOMING_TEXT = 'Upcoming launches next 3 months';
-const ERROR_MESSAGE = "Error getting launches"; // Outside dev enviroment we shouldn't show the full error we get from the API (security reasons)
+const ERROR_MESSAGE = "Error getting launches"; 
 
 const StyledCircularProgress = styled(CircularProgress)`
     padding: 1em;
@@ -72,7 +72,7 @@ const Launches = () => {
 
     useEffect(() => {
         getData();
-    }, [status]);
+    }, [status]); //(!) TODO: fix hook warning dependency
 
     return (
         <div>

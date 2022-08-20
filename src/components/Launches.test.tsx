@@ -27,7 +27,7 @@ describe('Launches Component', () => {
         });
     })
 
-    test('renders the launches from the API', async () => {
+    test('See the launches list from the last 3 months', async () => {
         const { getByTestId } = renderComponent();
 
         await waitFor(() => {
@@ -39,15 +39,15 @@ describe('Launches Component', () => {
     });
 
 
-    test('renders the loading while waiting', async () => {
+    test('See a loading when results are not ready', async () => {
         //Here we should check as the loading appears and then goes away.
      });
 
-    test('renders the error msg if there was an error', async () => {
+    test('See an error message if there was a problem', async () => {
         //Set axios mock to get an error example status:400 and see that the error appears
     });
 
-    test('getData again when status changes', async () => {
+    test('Change the status and get new data filtered by that', async () => {
         //We should check the hook: getData should be called again if status changes
      });
 
